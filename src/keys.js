@@ -7,9 +7,9 @@ console.log("Importando config DB en keys.js");
 module.exports = {
     //Objeto de configuracion de mi base de datos
     database: {
-        host: process.env.DB_HOST, // Donde esta alojada localhost
-        user: process.env.DB_USER, // Datos de conexion root
-        password: process.env.DB_PASS, //Sharingan321
-        database: process.env.DB_DATABASE // database_ links
+        host: 'localhost', // Donde esta alojada localhost
+        user: 'root', // Datos de conexion root
+        password: 'Sharingan321', //Sharingan321
+        database: 'database_links' // database_ links
     }
 };
