@@ -1,0 +1,54 @@
+{{!--fondo oscuro y letras blancas con gris: navbar-dark bg-dark en vez de ligth--}}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    {{!--Centrar la navegacion con un div container--}}
+    <div class="container">
+        <a class="navbar-brand" href="/">Web App</a> {{!--Solicita vista inicial--}}
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            {{!--Alinear los elementos a la derecha: navbar-nav ml-auto--}}
+            <ul class="navbar-nav ml-auto">
+                {{!--EJ dropdown BOOTSTRAP--}}
+                {{#if user}} {{!-- Si existe usuario logueado muestro los siguientes enlaces en la barra--}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Links
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        {{!--Redireccionar a localhost:4000/links /links--}}
+                        <a class="dropdown-item" href="/links">All links</a>
+                        <div class="dropdown-divider"></div>
+                        {{!--Redireccionar a localhost:4000/links/add /links/add--}}
+                        <a class="dropdown-item" href="/links/add">Add link</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/profile">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">LogOut</a> {{!--Crear ruta logout --}}
+                </li>
+                {{!-- <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li> --}}
+                {{!--Else debe ir dentro del IF sin cerrar--}}
+                {{else}} {{!--Si no existe usuario logueado muestri login y signup--}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/signup">SignUp</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/signin">LogIn</a> {{!--Crear ruta logout --}}
+                </li>
+
+                {{/if}} {{!--Finalizo if--}}
+
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,36 @@
+/*Diseño de plantilla principal main.hbs*/
+
+body{
+    background: #36b8cb; /*Color crema de fondo*/
+    font-family: 'Oswald', sans-serif; /*Cambio tipo de letra*/
+    overflow: hidden;
+}
+
+/* Clase index del main principal*/
+.index{ /*Para que la imagen abarque toda la pagina*/
+    width: 100vw;
+    height: 100vh;
+}
+
+.masthead{
+    color:white;
+    min-height: 30rem;
+    width: 100%;
+    height: 100%;
+    padding-top: 8rem;
+    background: url('/img/background3.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.masthead h1{
+    margin: 0;
+    padding: 0;
+}
+
+@media (min-width:992px) {
+    .masthead h1{
+        font-size: 4rem;
+    }
+}

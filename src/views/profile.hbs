@@ -1,0 +1,15 @@
+{{!--Vista a mostrar luego del logueo--}}
+
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-body p-4">
+                    <h3>Welcome {{user.username}}</h3>
+                    {{!-- Puedo acceder a la variable user que contiene el objeto con los datos del usuario desde DB asignada en passport.js--}}
+                    <a href="/links" class="btn btn-primary m-4">Check your links.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

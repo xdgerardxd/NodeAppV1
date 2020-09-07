@@ -1,0 +1,35 @@
+{{!-- Formulario Mostrar link get/--}}
+{{!--Muestra las consultas a DB--}}
+<div class="container p-4">
+    <div class="row">
+ 
+        {{#each links}}     {{!-- Recorrer el arreglo de objetos devuelvo por la consulta de links.js cuando el usuario solicite la vista localhost:4000/links--}}
+            {{!--Creo colunma que contendra los links--}}
+            <div class="col-md-3 p-3">
+                <div class="card text-center"> {{!--Muestro con diseño tipo carta--}}
+                    <div class="card-body"> {{!--Cuerpo para mostrar las propiedades del objeto--}}
+                        <a href="{{url}}" target=".blank"> {{!-- Lo redirijo a la ruta guardada target=".blank" para abrir en nueva ventana--}}
+                            <h3 class="card-title text-uppercase">
+                                {{this.title}} {{!--Visualizo el titulo--}}
+                            </h3>
+                        </a>
+                        <p class="m-2">{{description}}</p>
+                        <p>{{timeago created_at}}</p> {{!--Muestro la propiedad created_at de la lista de objetos y llamo al metodo timeago de la biblioteca /lib/handlerbars.js--}}
+                        {{!--muestro enlace tipo boton para redireccionar a borrar o editar--}}
+                        <a href="/links/delete/{{id}}" class="btn btn-danger btn-block mb-2">Delete link</a> {{!--Href puedo redireccionar a una vista que yo escoja--}}
+                        <a href="/links/edit/{{id}}" class="btn btn-secondary btn-block">Edit</a> {{!!--sintaxis para enviar comando mediante href--}}
+                    </div>
+                </div>
+            </div>
+        {{!--En caso de que links este vacio--}}
+        {{else}} {{!-- Estructura de bucle if else desde node con express en una vista--}}
+        <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center">
+                <p>No hay ningun link o ruta creada.</p>
+                <a href="/links/add" class="btn btn-primary">Create one</a>
+            </div>
+        </div>
+        {{/each}}
+
+    </div>
+</div>
