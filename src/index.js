@@ -25,7 +25,7 @@ console.log("Inicializando server");
 const app = express(); //mi aplicacion o server
 
 /* --- Settings --- */
-/* Server   */   app.set('port', process.env.PORT || 4000);      // Si existe un puerto en el S.O, defino un puerto, si existe un puerto en el sistema tomalo, en caso contrato toma el 4000
+/* Server   */   app.set('port', process.env.PORT || 8080);      // Si existe un puerto en el S.O, defino un puerto, si existe un puerto en el sistema tomalo, en caso contrato toma el 4000
 /* direccion*/   app.set('views', path.join(__dirname,'views')); // Vistas
 
 /* Engine configuration */                                       // direccion por defecto, direccion de las vistas, direccion de los archivos publicos y tipo de extension y como requiere funcioens de la carpeta lib hay que crear una carpeta en lib llamada handlerbars.js y helpers para ejecutar funciones fuera de handlerbars
